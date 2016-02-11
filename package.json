@@ -8,5 +8,11 @@
     "start": "node server/app.js"
   },
   "author": "Scott Bromander",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jquery": "^2.2.0",
+    "mongoose": "^4.4.3"
+  }
 }
