@@ -5,13 +5,13 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 //APP SETTINGS
-mongoose.connect('mongodb://localhost:27017/iota_cats');
+mongoose.connect('mongodb://localhost:27017/mu_cats');
 
 app.set('port', 5000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-//SCHEME
+//SCHEMA
 var Cat = mongoose.model('Cat', {name: String});
 
 //ROUTE FUNCTIONALITY
@@ -22,7 +22,7 @@ app.post('/cat', function(req,res){
         name: req.body.catName
     });
 
-    kitty.save(function(err, gremlins){
+    kitty.save(function(err, gremlins) {
         if(err){
             console.log(err);
         }
@@ -32,7 +32,7 @@ app.post('/cat', function(req,res){
 });
 
 app.get("/cat", function(req,res){
-    Cat.find({}).exec(function(err, gremlins){
+    Cat.find({}).exec(function(err, gremlins) {
         if(err){
             console.log(err);
         }
@@ -41,12 +41,12 @@ app.get("/cat", function(req,res){
     });
 });
 
-app.get('/*', function(req, res){
+app.get('/*', function(req, res) {
     console.log("Here is the request: " , req.params);
     var file = req.params[0] || "/views/index.html";
     res.sendFile(path.join(__dirname,"./public", file));
 });
-//
+
 
 app.listen(app.get('port'), function(){
     console.log('Listening on port: ' + app.get('port'));

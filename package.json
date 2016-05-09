@@ -1,13 +1,13 @@
 {
-  "name": "iota_server_client",
+  "name": "walking_skeleton_light",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/app.js"
   },
-  "author": "Scott Bromander",
+  "author": "Scott Bromander, Kris Szafranski",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
